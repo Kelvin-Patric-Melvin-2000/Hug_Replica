@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import logo from '../images/favicon.ico';
+import { useHistory } from "react-router";
 
 
-function validate() {
+const validate = () => {
+    const history = useHistory();
     let e = document.getElementById('email').value;
     let p = document.getElementById('password').value;
     if(p !== "" && e !== "") {
@@ -18,7 +20,6 @@ function validate() {
         alert("Both the fileds are mandatory to login");
     }
 }
-
 
 class Login extends Component {
     render() {
